@@ -28,20 +28,20 @@ Map::Map(Dificultad &d)
 
 char * Map::begin(void) const
 {
-	return *m_map; // IMPORTANTE! Ni puta idea que estamos haciendo XDLOL rawr
+	return *m_map; // Realment no necessitem aquesta funcio 
 }
 
-char * Map::end(void) const
+/*char * Map::end(void) const
 {
-	return *m_map + (m_x*m_y); //Preguntar tambien
-}
+	return *m_map + (m_x*m_y); //Esta malament i realment no cal
+}*/
 
 void Map::modify(int fila, int columna, char value)
 {
 	m_map[fila][columna] = value;
 }
 
-void Map::fill(char value)
+void Map::initialize(char value)
 {
 	for (int i = 0; i < m_x; i++)
 		for (int j = 0; j<m_y; j++)
@@ -57,4 +57,19 @@ void Map::printMap(void)
 	}
 		
 
+}
+
+char Map::getValueInPosition(int x, int y)
+{
+	return m_map[x][y];
+}
+
+int Map::getm_x()
+{
+	return m_x;
+}
+
+int Map::getm_y()
+{
+	return m_y;
 }

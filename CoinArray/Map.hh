@@ -11,10 +11,13 @@ public:
 
 	Map(Dificultad &d);
 	char *begin(void) const;
-	char *end(void) const;
+//	char *end(void) const;
 	void modify(int fila, int columna, char value);
-	void fill(char value);
+	void initialize(char value);
 	void printMap(void);
+	char getValueInPosition(int x, int y);
+	int getm_x();
+	int getm_y();
 
 private:
 
