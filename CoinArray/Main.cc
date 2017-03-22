@@ -1,6 +1,7 @@
 #include <ostream>
 #include <time.h>
 #include "Map.hh"
+#include "CoinManager.hh"
 
 int main() 
 {
@@ -17,29 +18,26 @@ int main()
 	{
 		switch (opcionUsuario)
 		{
-		case '1': 
+		case 1: 
 			d = Dificultad::EASY;
 			dificultadEscogida = true;
 			break;
-		case '2': 
+		case 2: 
 			d = Dificultad::MEDIUM;
 			dificultadEscogida = true;
 			break;
-		case '3': 
+		case 3: 
 			d = Dificultad::HARD;
 			dificultadEscogida = true;
 			break;
-		default: cout << "Dificultad no encontrada, indique un numero entre 1 i 3:" << endl;
+		default: cout << "Dificultad no encontrada, indique un numero entre 1 i 3:" << endl; //Preguntar porque si ponemos una letra peta el programa
 			cin >> opcionUsuario;
 			break;
 		}
 	}
 	
-
-
-
-
 	Map mapa(d);
+	CoinManager coin(mapa);
 	mapa.printMap();
 
 	return 0;

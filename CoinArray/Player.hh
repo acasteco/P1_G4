@@ -31,7 +31,8 @@ namespace Input
 		return Key::NONE;
 	}
 };
-	
+	
+
 
 class Player
 {

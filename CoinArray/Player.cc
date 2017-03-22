@@ -17,6 +17,7 @@ Player::Player(Map & m) :
 	_Destroy(aux);
 }
 
+
 void Player::MovePlayer(Input::Key k)
 {
 

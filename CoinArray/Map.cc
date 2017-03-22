@@ -1,6 +1,6 @@
 #include "Map.hh"
 
-Map::Map(Dificultad &d) 
+Map::Map(Dificultad d) 
 {
 	switch (d) {
 	case Dificultad::EASY:
@@ -15,15 +15,21 @@ Map::Map(Dificultad &d)
 		m_x = 15;
 		m_y = 30;
 		break;
-	default: 
-		m_x = DEFAULT_X;
-		m_y = DEFAULT_Y;
+	default:
 		break;
 
 	}
+	dif = d;
 	m_map = new char*[m_x];
 	for (int i = 0; i < m_x; i++)
 		m_map[i] = new char[m_y];
+
+	initialize('.');
+}
+
+Map::~Map()
+{
+	delete(m_map);
 }
 
 char * Map::begin(void) const
@@ -72,4 +78,9 @@ int Map::getm_x()
 int Map::getm_y()
 {
 	return m_y;
+}
+
+Dificultad Map::getDificultad()
+{
+	return dif;
 }

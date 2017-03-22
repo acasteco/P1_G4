@@ -9,7 +9,8 @@ class Map
 {
 public:
 
-	Map(Dificultad &d);
+	Map(Dificultad d);
+	~Map();
 	char *begin(void) const;
 //	char *end(void) const;
 	void modify(int fila, int columna, char value);
@@ -18,12 +19,14 @@ public:
 	char getValueInPosition(int x, int y);
 	int getm_x();
 	int getm_y();
+	Dificultad getDificultad();
 
 private:
 
 	static const size_t DEFAULT_X{ 5 }; //size_t actua como los int pero se usa para definir tamaños
 	static const size_t DEFAULT_Y{ 10 };
 
+	Dificultad dif;
 	char **m_map;
 	size_t m_x;
 	size_t m_y;
