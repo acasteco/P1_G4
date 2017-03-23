@@ -5,12 +5,17 @@ Player::Player(Map & m) :
 {
 	int aux[2];
 	bool posicioTrobada = false;
-	while (!posicioTrobada) {
+	while (!posicioTrobada) 
+	{
 		aux[0] = rand() % map.getm_x();
 		aux[1] = rand() % map.getm_y();
 
-		if (map.getValueInPosition(aux[0], aux[1]) == '.')
+		if (map.getValueInPosition(aux[0], aux[1]) == '.') 
+		{
+			map.modify(aux[0], aux[1], '@');
 			posicioTrobada = true;
+		}
+			
 	}
 	playerPosition[0] = aux[0];
 	playerPosition[1] = aux[1];
@@ -18,8 +23,12 @@ Player::Player(Map & m) :
 }
 
 
-void Player::MovePlayer(Input::Key k)
+/*void Player::MovePlayer(Input::Key k)
 {
+	switch (k) {
+	case Input::Key::W:
 
-}
+	}
+
+}*/
 

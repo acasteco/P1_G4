@@ -6,7 +6,7 @@ CoinManager::CoinManager(Map &m):
 	//map.modify(0, 0, '$');
 	//map.modify(5, 5, '$');
 	GenerarMonedas();
-	//posicionarMonedas();
+	posicionarMonedas();
 }
 
 CoinManager::~CoinManager()
@@ -37,6 +37,7 @@ void CoinManager::eliminarMoneda(int x, int y)
 
 void CoinManager::GenerarMonedas()
 {
-	cantidadMonedas = 5;//(map.getm_x()*map.getm_y()) * (((rand() % 11) + 3) / 100); //dimension of map * random% between 3 and 13  
+
+	cantidadMonedas = (map.getm_x()*map.getm_y()) * (float((rand() % 11) + 3) / 100.f); //dimension of map * random% between 3 and 13  
 	cout << cantidadMonedas << endl;
 }
