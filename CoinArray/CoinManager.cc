@@ -30,11 +30,9 @@ void CoinManager::posicionarMonedas()
 	}
 }
 
-void CoinManager::eliminarMoneda(int x, int y)
+void CoinManager::eliminarMoneda()
 {
-	cout << "Voy a eliminar una moneda" << endl;
-	map.modify(x, y, '.');
-	cantidadMonedas--;
+	--cantidadMonedas;
 }
 
 void CoinManager::GenerarMonedas()

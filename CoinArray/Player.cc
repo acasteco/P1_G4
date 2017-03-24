@@ -55,8 +55,9 @@ void Player::MovePlayer()
 		break;
 
 	}
-	if (map.getValueInPosition(playerPosition[0], playerPosition[1] == '$'))
-		coin.eliminarMoneda(playerPosition[0], playerPosition[1]);
+	/*if (map.getValueInPosition(playerPosition[0], playerPosition[1] == '$')) {
+		coin.eliminarMoneda();
+	}*/
 	map.modify(playerPosition[0], playerPosition[1], '@');
 
 }

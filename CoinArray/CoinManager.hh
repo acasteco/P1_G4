@@ -7,7 +7,7 @@ public:
 	CoinManager(Map &m);
 	~CoinManager();
 	void posicionarMonedas();
-	void eliminarMoneda(int x, int y);
+	void eliminarMoneda();
 	void GenerarMonedas();
 	bool noMoney();
 
