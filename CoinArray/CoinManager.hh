@@ -9,6 +9,7 @@ public:
 	void posicionarMonedas();
 	void eliminarMoneda(int x, int y);
 	void GenerarMonedas();
+	bool noMoney();
 
 private:
 	Map &map;

@@ -32,12 +32,23 @@ void CoinManager::posicionarMonedas()
 
 void CoinManager::eliminarMoneda(int x, int y)
 {
+	cout << "Voy a eliminar una moneda" << endl;
 	map.modify(x, y, '.');
+	cantidadMonedas--;
 }
 
 void CoinManager::GenerarMonedas()
 {
 
-	cantidadMonedas = (map.getm_x()*map.getm_y()) * (float((rand() % 11) + 3) / 100.f); //dimension of map * random% between 3 and 13  
+	cantidadMonedas = (map.getm_x()*map.getm_y()) * (float((rand() % 11) + 3) / 100.f);  
 	cout << cantidadMonedas << endl;
+}
+
+bool CoinManager::noMoney()
+{
+	cout << cantidadMonedas << endl;
+	if (cantidadMonedas == 0)
+		return true;
+	else
+		return false;
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "Map.hh"
+#include "CoinManager.hh"
 #include <conio.h>
 
 namespace Input 
@@ -37,11 +38,14 @@ namespace Input
 class Player
 {
 public:
-	Player(Map &m);
-	void MovePlayer(Input::Key k);
+	Player(Map &m, CoinManager c);
+	void MovePlayer();
+
 
 private:
+	
 	int playerPosition[2];
 	int puntuation;
 	Map &map;
+	CoinManager &coin;
 };

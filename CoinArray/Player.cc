@@ -1,7 +1,8 @@
 #include "Player.hh"
 
-Player::Player(Map & m) :
-	map(m)
+Player::Player(Map & m, CoinManager c) :
+	map(m),
+	coin(c)
 {
 	int aux[2];
 	bool posicioTrobada = false;
@@ -23,12 +24,41 @@ Player::Player(Map & m) :
 }
 
 
-/*void Player::MovePlayer(Input::Key k)
+void Player::MovePlayer()
 {
+	Input::Key k = Input::getKey();
+	map.modify(playerPosition[0], playerPosition[1], '.');
 	switch (k) {
 	case Input::Key::W:
+		if ((--playerPosition[0]) < 0)
+			playerPosition[0]++;
+		break;
+	case Input::Key::S:
+		if ((++playerPosition[0]) >= map.getm_x())
+			playerPosition[0]--;
+		break;
+	case Input::Key::A:
+		if ((--playerPosition[1]) < 0)
+			playerPosition[1]++;
+		break;
+	case Input::Key::D:
+		if ((++playerPosition[1]) >= map.getm_y())
+			playerPosition[1]--;
+		break;
+	case Input::Key::ESC:
+		//leave the game
+		break;
+	case Input::Key::ENTER:
+		//don't know watcha do
+		break;
+	default:
+		break;
 
 	}
+	if (map.getValueInPosition(playerPosition[0], playerPosition[1] == '$'))
+		coin.eliminarMoneda(playerPosition[0], playerPosition[1]);
+	map.modify(playerPosition[0], playerPosition[1], '@');
 
-}*/
+}
+
 

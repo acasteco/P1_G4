@@ -41,11 +41,23 @@ int main()
 			cin >> opcionUsuario;
 		}
 	}
-	
+	system("cls");
 	Map mapa(d);
 	CoinManager coin(mapa);
-	Player player(mapa);
+	Player player(mapa, coin);
 	mapa.printMap();
+	while (true) {
+		if (_kbhit()) {
+			player.MovePlayer();
+			system("cls");
+			mapa.printMap();
+			if (coin.noMoney()) {
+				coin.GenerarMonedas();
+				coin.posicionarMonedas();
+			}
+		}
+	}
+	
 
 	return 0;
 }
