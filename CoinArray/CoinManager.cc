@@ -39,14 +39,17 @@ void CoinManager::GenerarMonedas()
 {
 
 	cantidadMonedas = (map.getm_x()*map.getm_y()) * (float((rand() % 11) + 3) / 100.f);  
-	cout << cantidadMonedas << endl;
 }
 
 bool CoinManager::noMoney()
 {
-	cout << cantidadMonedas << endl;
 	if (cantidadMonedas == 0)
 		return true;
 	else
 		return false;
+}
+
+int CoinManager::getCantidadMonedas()
+{
+	return cantidadMonedas;
 }

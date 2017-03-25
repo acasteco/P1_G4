@@ -1,9 +1,11 @@
 #include "Player.hh"
 
-Player::Player(Map & m, CoinManager c) :
+Player::Player(Map & m, CoinManager & c) :
 	map(m),
 	coin(c)
 {
+	score = 0;
+	PlayerLeave = false;
 	int aux[2];
 	bool posicioTrobada = false;
 	while (!posicioTrobada) 
@@ -46,7 +48,7 @@ void Player::MovePlayer()
 			playerPosition[1]--;
 		break;
 	case Input::Key::ESC:
-		//leave the game
+		PlayerLeave = true;
 		break;
 	case Input::Key::ENTER:
 		//don't know watcha do
@@ -55,11 +57,36 @@ void Player::MovePlayer()
 		break;
 
 	}
-	/*if (map.getValueInPosition(playerPosition[0], playerPosition[1] == '$')) {
+	if (map.getValueInPosition(playerPosition[0], playerPosition[1]) == '$') {
+		score++;
 		coin.eliminarMoneda();
-	}*/
+	}
 	map.modify(playerPosition[0], playerPosition[1], '@');
 
 }
 
+int Player::getScore()
+{
+	return score;
+}
 
+bool Player::PlayerQuitGame()
+{
+	return PlayerLeave;
+}
+
+
+//int Player::moveMenuSelector()
+//{
+//	Input::Key k = Input::getKey();
+//	switch (k) {
+//	case Input::Key::W:
+//		if (--menu.selector < 0)
+//			menu.selector++;
+//	case Input::Key::S:
+//		if (++menu.selector > 2)
+//			menu.selector--;
+//	case Input::Key::ENTER:
+//		menu.setDificultadEscogida(true);
+//	}
+//}

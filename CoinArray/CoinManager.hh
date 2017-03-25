@@ -10,6 +10,7 @@ public:
 	void eliminarMoneda();
 	void GenerarMonedas();
 	bool noMoney();
+	int getCantidadMonedas();
 
 private:
 	Map &map;
