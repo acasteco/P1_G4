@@ -148,14 +148,12 @@
   <ItemGroup>
     <ClInclude Include="CoinManager.hh" />
     <ClInclude Include="Map.hh" />
-    <ClInclude Include="Menu.hh" />
     <ClInclude Include="Player.hh" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CoinManager.cc" />
     <ClCompile Include="Main.cc" />
     <ClCompile Include="Map.cc" />
-    <ClCompile Include="Menu.cc" />
     <ClCompile Include="Player.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
